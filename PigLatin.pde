@@ -6,13 +6,7 @@ public void setup()
 	{
 	  System.out.println(pigLatin(lines[i]));
 	}
-	/*System.out.println();
-		String[] Llines = loadStrings("LowellHymn.txt");
-	System.out.println("there are " + Llines.length + " lines");
-	for (int i = 0 ; i < Llines.length; i++) 
-	{
-	  System.out.println(pigLatin(Llines[i]));
-	}*/
+
 }
 public void draw()
 {
@@ -50,8 +44,8 @@ public String pigLatin(String sWord)
 }
 else if(findFirstVowel(sWord) != 0)
 	{
-	sWord=sWord+sWord.charAt(0);	
-	sWord=sWord.substring(1,sWord.length());
+	sWord=sWord+sWord.substring(0,findFirstVowel(sWord));	
+	sWord=sWord.substring(findFirstVowel(sWord),sWord.length());
 return sWord+"ay";
 		}
 	else
